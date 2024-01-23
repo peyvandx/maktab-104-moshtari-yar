@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Data;
+using Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -12,21 +13,7 @@ namespace CustomerUI.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            Tickets = new List<Ticket>()
-            {
-                new Ticket()
-                {
-                    Id = 1,
-                    Title = "درخواست اول",
-                    Description = "*********************"
-                },
-                new Ticket()
-                {
-                    Id = 2,
-                    Title = "درخواست دوم",
-                    Description = "++++++++++++++++++++++++"
-                }
-            };
+
         }
 
         #region Model
@@ -36,13 +23,9 @@ namespace CustomerUI.Pages
 
         public void OnGet()
         {
-
+            var database = new InMemoryDatabase();
+            Tickets = database.GetTickets();
         }
-
-        [HttpPost]
-        public void OnPost()
-        {
-
-        }
+        
     }
 }

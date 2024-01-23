@@ -1,3 +1,4 @@
+using Data;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -22,9 +23,14 @@ namespace CustomerUI.Pages
         }
 
         [HttpPost]
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            //if (!ModelState.IsValid)
+            //    return Page();
 
+            var database = new InMemoryDatabase();
+            database.AddTicket(Ticket);
+            return RedirectToPage("Index");
         }
     }
 }

@@ -16,6 +16,8 @@ namespace CustomerUI.Pages
         public void OnGet(int id)
         {
             this.Id=id;
+
+            // get ticket from database
         }
     }
 }
