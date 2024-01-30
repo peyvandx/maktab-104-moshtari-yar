@@ -18,10 +18,9 @@ namespace Entities
 
         [Display(Name ="اولویت")]
         public PriorityEnum Priority { get; set; }
-
-
+        
         //public int DepartmentId { get; set; }
-        [Display(Name = "نام سازمان")]
+        [Display(Name = "ارجاع به واحد")]
         public string DepartmentName { get; set; }
 
         /// <summary>
@@ -35,7 +34,7 @@ namespace Entities
         /// آی دی شخصی که تیکت را ثبت کرده است
         /// </summary>
         ///
-        [Display(Name = "کد شخص ارسال کننده")]
+        [Display(Name = "شناسه ارسال کننده")]
         public int SubmittedBy { get; set; }
     }
 
