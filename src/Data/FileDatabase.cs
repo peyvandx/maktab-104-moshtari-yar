@@ -1,0 +1,17 @@
+﻿using Contracts;
+using Entities;
+
+namespace Data;
+
+public class FileDatabase : IDatabase
+{
+    public List<Ticket> GetTickets()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int AddTicket(Ticket model)
+    {
+        throw new NotImplementedException();
+    }
+}
