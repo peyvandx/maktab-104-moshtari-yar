@@ -16,6 +16,7 @@ namespace Entities
         [Display(Name = "توضیحات")]
         public string Description { get; set; }
 
+        [Display(Name = "اولویت")]
         public PriorityEnum Priority { get; set; }
 
         //public int DepartmentId { get; set; }

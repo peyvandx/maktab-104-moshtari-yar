@@ -20,6 +20,8 @@
             <td>@ticket.Description</td>
             <td>
                 <a class="btn btn-sm btn-info" asp-page="/TicketDetails" asp-route-Id="@ticket.Id">مشاهده</a>
+                <a class="btn btn-sm btn-warning" asp-page="" asp-route-Id="@ticket.Id">ویرایش</a>
+                <a class="btn btn-sm btn-danger" asp-page="" asp-route-Id="@ticket.Id">بستن</a>
             </td>
         </tr>
     }

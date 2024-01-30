@@ -12,6 +12,14 @@
         <label asp-for="Ticket.Description" class="form-label"></label>
         <textarea class="form-control" asp-for="Ticket.Description" rows="3"></textarea>
     </div>
+    <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" asp-for="Ticket.Priority">
+            <option selected>برای رسیدگی به درخواستت عجله داری؟</option>
+            <option value="0">عجله ای ندارم</option>
+            <option value="1">یکمی عجله دارم</option>
+            <option value="2">خیلی عجله دارم</option>
+        </select>
+    </div>
     <div class="col-12">
         <button type="submit" class="btn btn-primary">ارسال درخواست</button>
     </div>
