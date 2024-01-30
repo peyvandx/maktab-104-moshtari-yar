@@ -1,0 +1,33 @@
+﻿@model List<Ticket>
+@{
+    ViewData["Title"] = "درخواست ها";
+}
+
+
+<table class="table table-info table-striped table-hover w-100">
+    <tr>
+        <td>شناسه درخواست</td>
+        <td>عنوان</td>
+        <td>توضیحات</td>
+        <td>اولویت</td>
+        <td>ارجاع به</td>
+        <td>ارسال کننده</td>
+        <td>زمان ارسال</td>
+
+    </tr>
+    @foreach (var ticket in Model)
+    {
+        <tr>
+            <td>@ticket.Id</td>
+            <td>@ticket.Title</td>
+            <td>@ticket.Description</td>
+            <td>@ticket.Priority</td>
+            <td>@ticket.DepartmentName</td>
+            <td>@ticket.SubmittedBy</td>
+            <td>@ticket.SubmittedAt</td>
+            <td>
+                <a class="btn btn-sm btn-info" asp-page="/TicketDetails" asp-route-Id="@ticket.Id">مشاهده</a>
+            </td>
+        </tr>
+    }
+</table>
