@@ -19,8 +19,7 @@ namespace MoshtariYarUI.Areas.Customer.Pages
         public IActionResult OnGet(int id)
         {
             var tickets = dataBase.GetTickets();
-            var targetTicket = tickets.FirstOrDefault(t => t.Id == id);
-            CurrentTicket = targetTicket;
+            CurrentTicket = tickets.FirstOrDefault(t => t.Id == id);
 
             if (CurrentTicket == null)
                 return NotFound();
