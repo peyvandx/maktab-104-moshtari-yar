@@ -4,6 +4,11 @@ namespace Entities
 {
     public class Ticket
     {
+        public Ticket()
+        {
+            SubmittedAt = DateTime.Now;
+        }
+
         [Display(Name = "شناسه")]
         public int Id { get; set; }
 
@@ -16,9 +21,9 @@ namespace Entities
         [Display(Name = "توضیحات")]
         public string Description { get; set; }
 
-        [Display(Name ="اولویت")]
+        [Display(Name = "اولویت")]
         public PriorityEnum Priority { get; set; }
-        
+
         //public int DepartmentId { get; set; }
         [Display(Name = "ارجاع به واحد")]
         public string DepartmentName { get; set; }
@@ -36,6 +41,9 @@ namespace Entities
         ///
         [Display(Name = "شناسه ارسال کننده")]
         public int SubmittedBy { get; set; }
+
+        [Display(Name = "پاسخ :")]
+        public string? TicketResponse { get; set; }
     }
 
     //public class Department

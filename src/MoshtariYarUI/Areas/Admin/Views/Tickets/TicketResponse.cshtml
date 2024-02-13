@@ -1,0 +1,32 @@
+﻿@model Ticket
+
+<div class="container w-50 text-center">
+    @if (TempData["AddResponse"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["AddResponse"].ToString()
+        </div>
+    }
+</div>
+
+
+<h2>ثبت پاسخ برای تیکت شماره @Model.Id</h2>
+
+<div class="my-3 w-50">
+    <ul class="list-group">
+        <li class="list-group-item">عنوان تیکت : @Model.Title</li>
+        <li class="list-group-item">ارسال کننده : @Model.SubmittedBy</li>
+        <li class="list-group-item">متن تیکت : @Model.Description</li>
+    </ul>
+</div>
+
+<div class="w-50">
+    <form asp-controller="Tickets" asp-action="TicketResponse" method="post">
+        <input type="hidden" value="@Model.Id" />
+        <label asp-for="@Model.TicketResponse"></label>
+        <textarea class="form-control" rows="3" asp-for="@Model.TicketResponse"></textarea>
+        <div class="my-4">
+            <input type="submit" class="btn btn-outline-primary" value="تایید" />
+        </div>
+    </form>
+</div>

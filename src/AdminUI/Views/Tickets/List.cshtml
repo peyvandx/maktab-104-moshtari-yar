@@ -3,6 +3,13 @@
     ViewData["Title"] = "درخواست ها";
 }
 
+@if (TempData["Success"] != null)
+{
+    <div class="container alert-success">
+        @TempData["Success"].ToString()
+    </div>
+}
+
 
 <table class="table table-info table-striped table-hover w-100">
     <tr>
@@ -27,6 +34,7 @@
             <td>@ticket.SubmittedAt</td>
             <td>
                 <a class="btn btn-sm btn-info" asp-page="/TicketDetails" asp-route-Id="@ticket.Id">مشاهده</a>
+                <a class="btn btn-sm btn-danger" asp-controller="Tickets" asp-action="DeleteTicket" asp-route-Id="@ticket.Id">حذف</a>
             </td>
         </tr>
     }
